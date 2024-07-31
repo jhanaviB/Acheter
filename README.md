@@ -1,7 +1,5 @@
 # E-commerce Microservices Backend
 
-This project implements an e-commerce platform using microservices architecture with **Java** and **Spring Boot**. It leverages several technologies to manage various aspects of the system, including **MySQL**, **MongoDB**, **Spring Keycloak**, **Spring Cloud Gateway**, **Grafana**, and **Prometheus**.
-
 ## Technologies Used
 
 - **Java**
@@ -22,21 +20,22 @@ This project implements an e-commerce platform using microservices architecture 
 The backend is composed of several microservices, each handling a distinct part of the platform:
 
 1. **Product Service**  
-   Manages the product catalog, including product information, pricing, and availability.
+   Manages the product catalog, including product id, description, and price.
 
-2. **Order Service**  
-   Handles order processing, payment integration, and order tracking.
+2. **Inventory Service**  
+   Holds the product id and quantity.
+   
+3. **Order Service**  
+   Manages placing order. For this it synchronously communicated with the Inventory service to check if the product is in stock and has sufficient quantity.
+   After order is placed, it asynchronously communicates with the notification service to send a notiication for the same.
 
-3. **Notification Service**  
-   Sends notifications to users for various events such as order confirmations, shipment tracking, and promotional messages.
+4. **Notification Service**  
+   Kafka listener to consume notifcation message produced by OrderService.
 
-4. **Inventory Service**  
-   Manages stock levels, inventory updates, and supplier information.
-
-5. **Discovery Server**  
+6. **Discovery Server**  
    Provides service discovery capabilities, allowing microservices to locate each other dynamically. Implemented using **Spring Cloud Eureka**.
 
-6. **API Gateway**  
+7. **API Gateway**  
    Acts as a single entry point for all client requests, routing them to the appropriate microservice. Implemented using **Spring Cloud Gateway**.
 
 ---
