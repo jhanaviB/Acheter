@@ -24,10 +24,10 @@ It demonstrates service decomposition, asynchronous messaging with RabbitMQ and 
 
 ⚙️ Getting Started
 1. Clone the repository
-   ```
-    git clone https://github.com/jhanaviB/Acheter.git
-    cd Acheter
-   ```
+```
+git clone https://github.com/jhanaviB/Acheter.git
+cd Acheter
+```
    
 2. Start dependencies with Docker
 
@@ -58,7 +58,7 @@ Notification Service → /api/notifications
 
 All requests should be made via the API Gateway (http://localhost:8080).
 
-###✨ Features
+✨ Features
 ## 🖥️ Core Technologies
 
 Java 17+ – Modern language features and performance improvements.
@@ -99,7 +99,7 @@ Role-Based Access Control (RBAC)
 
 Token-based authentication (JWT, OAuth2, OpenID Connect)
 
-##📊 Observability
+## 📊 Observability
 
 Prometheus – Metrics collection from services.
 
@@ -109,7 +109,7 @@ Spring Boot Actuator – Health checks, metrics, and application insights.
 
 Centralized Logging – Configurable to push logs to ELK stack or Splunk.
 
-###⚙️ Deployment & Scalability
+### ⚙️ Deployment & Scalability
 
 Docker – Containerization of services for consistent environments.
 
@@ -119,7 +119,7 @@ Automatic Load Balancing – Client-side load balancing with Spring Cloud LoadBa
 
 Horizontal Scaling – Scale services independently based on demand.
 
-###🛠️ Developer Productivity
+### 🛠️ Developer Productivity
 
 Config Server – Centralized configuration management.
 
